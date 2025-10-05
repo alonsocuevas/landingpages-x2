@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlonsoDev - Soluciones Digitales</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+  <!-- Hero Section -->
+  <header class="hero">
+      <h1>🚀 <span>Alonso</span> Desarrollo de software web a tu medida</h1>
+      <p>Especializado en crear aplicaciones personalizadas, modernas y seguras.</p>
+      <a href="#contacto" class="btn">Solicita tu proyecto ahora</a>
+  </header>
+
+  <!-- Servicios -->
+  <section class="servicios">
+    <h2><span>Lo que hago</span></h2>
+    <div class="cards-do">
+     <!-- ----------------------------------------------------------------- -->
+      <div class="card-do">
+        <i class="fas fa-code"></i>
+        <h3>Desarrollo Web</h3>
+        <p>Páginas modernas y responsivas adaptadas a cualquier dispositivo.</p>
+      </div>
+     <!-- ----------------------------------------------------------------- -->
+      <div class="card-do">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Apps Personalizadas</h3>
+        <p>Aplicaciones web a medida que resuelven problemas reales.</p>
+      </div>
+      <!-- ----------------------------------------------------------------- -->
+      <div class="card-do">
+        <i class="fas fa-cogs"></i>
+        <h3>Automatización</h3>
+        <p>Optimización de procesos con software hecho a tu medida.</p>
+      </div>
+     <!-- ----------------------------------------------------------------- -->
+    </div>
+  </section>
+
+  <!-- Portafolio -->
+  <section class="portafolio">
+    <h2>Mis proyectos</h2>
+    <h4>Algunos ejemplos que puedes revisar en mi GitHub:</h4>
+    <div class="cards">
+<!-- ----------------------------------------------------------------- -->
+      <div class="card">
+        <a href="https://alonsocuevas.github.io/banco/appbanco/index.html" target="_blank" class="card-link">
+          <i class="fa-solid fa-building-columns"></i>
+          <h3>Banco App</h3>
+          <p>Pequeña App para clientes de un banco.</p>
+        </a>
+      </div>
+<!-- ----------------------------------------------------------------- -->
+      <div class="card">
+        <a href="https://alonsocuevas.github.io/TicketAvion/appavion/index.html" target="_blank" class="card-link">
+          <i class="fa-solid fa-plane-departure"></i>
+          <h3>Ticket Avion</h3>
+          <p>Simulacion para gestionar ticket aereo.</p>
+        </a>
+      </div>
+<!-- ----------------------------------------------------------------- -->
+      <div class="card">
+        <a href="https://alonsocuevas.github.io/temperatura/" target="_blank" class="card-link">
+          <i class="fa-solid fa-temperature-high"></i>
+          <h3>Conversor</h3>
+          <p>App que transforma de grados Fahrenheit a Celsius.</p>
+        </a>
+      </div>
+<!-- ----------------------------------------------------------------- -->
+      <div class="card">
+        <a href="https://alonsocuevas.github.io/Futbol/futbolapp/index.html" target="_blank" class="card-link">
+          <i class="fa-solid fa-futbol"></i>
+          <h3>Futbol</h3>
+          <p>App de equipo de fulbol con ciertas reglas de negocio para automatiar un proceso.</p>
+        </a>
+      </div>
+<!-- ----------------------------------------------------------------- -->
+<div class="card">
+  <a href="https://alonsocuevas.github.io/dino/" target="_blank" class="card-link">
+    <i class="fa-solid fa-gamepad"></i>
+    <h3>Dino Game</h3>
+    <p>Replica del juego del dinosaurio de Google chrome pero ahora a colores.</p>
+  </a>
+</div>
+<!-- ----------------------------------------------------------------- -->
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contacto">
+    <h2>Contáctame</h2>
+    <h4>¿Listo para tu proyecto digital? Escríbeme directamente:</h4>
+    
+    <!-- Formulario de contacto -->
+    <form class="contact-form" action="mailto:alonsocuevaspizarro@gmail.com" method="post" enctype="text/plain">
+      <div class="form-group">
+        <label for="nombre">Tu nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Tu email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="asunto">Asunto:</label>
+        <input type="text" id="asunto" name="asunto" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="mensaje">Cuéntame sobre tu proyecto:</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+      </div>
+      
+      <button type="button" class="btn" id="submit-btn">Enviar correo</button>
+      <div id="message" class="message"></div>
+    </form>
+    
+    <div class="contact-links">
+      <a href="https://wa.me/56932207318"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="https://www.linkedin.com/in/alonso-cuevas-pizarro-b2066434a/"><i class="fa-brands fa-linkedin"></i> Linkedin</a>
+      <a href="https://alonsocuevas.github.io/dev/"><i class="fa-solid fa-briefcase"></i> Curriculum</a>
+    </div>
+  </section>
+
+
+  
+
+  <footer>
+    <p>© 2025 Alonso - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    // Inicializar EmailJS
+    (function() {
+      emailjs.init("0rIaZMnZh69BFi4g6"); // Reemplaza con tu Public Key de EmailJS
+    })();
+
+    // Manejar el clic del botón
+    document.getElementById('submit-btn').addEventListener('click', function(event) {
+      event.preventDefault();
+      
+      const submitBtn = document.getElementById('submit-btn');
+      const messageDiv = document.getElementById('message');
+      
+      // Validar campos
+      const nombre = document.getElementById('nombre').value;
+      const email = document.getElementById('email').value;
+      const asunto = document.getElementById('asunto').value;
+      const mensaje = document.getElementById('mensaje').value;
+      
+      if (!nombre || !email || !asunto || !mensaje) {
+        messageDiv.innerHTML = '<div class="error">❌ Por favor, completa todos los campos.</div>';
+        return;
+      }
+      
+      // Cambiar texto del botón
+      submitBtn.textContent = 'Enviando...';
+      submitBtn.disabled = true;
+      
+      // Obtener datos del formulario
+      const formData = {
+        from_name: nombre,
+        from_email: email,
+        subject: asunto,
+        message: mensaje,
+        to_email: 'shemagh.dev@gmail.com'
+      };
+      
+      // Enviar email
+      emailjs.send('service_j1kx5x9', 'template_2z54hdq', formData)
+        .then(function(response) {
+          messageDiv.innerHTML = '<div class="success">✅ ¡Mensaje enviado correctamente! Te responderé pronto.</div>';
+          document.getElementById('contact-form').reset();
+        }, function(error) {
+          console.log('Error:', error);
+          messageDiv.innerHTML = '<div class="error">❌ Error al enviar el mensaje. Inténtalo de nuevo o usa los enlaces de contacto.</div>';
+        })
+        .finally(function() {
+          submitBtn.textContent = 'Enviar correo';
+          submitBtn.disabled = false;
+        });
+    });
+  </script>
+</body>
+</html>
